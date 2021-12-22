@@ -1,0 +1,110 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MyFolder\\MyLearning\\C# - Courses\\C#-Programming\\Sources\\LEARNING_EF_CORE_CODE_FIRST\\lESSON-03-CRUD\\lESSON-03-CRUD.csproj": {}
+  },
+  "projects": {
+    "D:\\MyFolder\\MyLearning\\C# - Courses\\C#-Programming\\Sources\\LEARNING_EF_CORE_CODE_FIRST\\lESSON-03-CRUD\\lESSON-03-CRUD.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyFolder\\MyLearning\\C# - Courses\\C#-Programming\\Sources\\LEARNING_EF_CORE_CODE_FIRST\\lESSON-03-CRUD\\lESSON-03-CRUD.csproj",
+        "projectName": "lESSON-03-CRUD",
+        "projectPath": "D:\\MyFolder\\MyLearning\\C# - Courses\\C#-Programming\\Sources\\LEARNING_EF_CORE_CODE_FIRST\\lESSON-03-CRUD\\lESSON-03-CRUD.csproj",
+        "packagesPath": "C:\\Users\\Ali-Azimzadeh\\.nuget\\packages\\",
+        "outputPath": "D:\\MyFolder\\MyLearning\\C# - Courses\\C#-Programming\\Sources\\LEARNING_EF_CORE_CODE_FIRST\\lESSON-03-CRUD\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ali-Azimzadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/BkOlPaJ5gmMaoDJ3mp4bT3UbkYOUlJcHQZHyZPxYnyNb9MTlyD/api": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
