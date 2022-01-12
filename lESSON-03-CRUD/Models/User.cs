@@ -23,12 +23,10 @@ namespace Models
 		// **********
 		//[System.ComponentModel.DataAnnotations.Required]
 		[System.ComponentModel.DataAnnotations.Required
-			(AllowEmptyStrings = false)]
+			(AllowEmptyStrings = false)]//""
 
 		[System.ComponentModel.DataAnnotations.StringLength
 			(maximumLength: 20, MinimumLength = 6)]
-
-	
 			
 		public string Username { get; set; }
 		// **********
@@ -41,7 +39,7 @@ namespace Models
 			(maximumLength: 20, MinimumLength = 8)]
 
 		//[System.ComponentModel.DataAnnotations.StringLength
-		//	(maximumLength: 40, MinimumLength = 40)]
+		//	(maximumLength: 40, MinimumLength = 8)]
 		public string Password { get; set; }
 		// **********
 

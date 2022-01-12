@@ -20,6 +20,8 @@ namespace Models
         public DatabaseContext(string connectionString)
         {
             _connectionString = connectionString;
+
+            Database.EnsureCreated();
         }
 
         /// <summary>
@@ -28,6 +30,8 @@ namespace Models
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+          
+
             optionsBuilder.UseSqlServer(connectionString: _connectionString);
 
             base.OnConfiguring(optionsBuilder);

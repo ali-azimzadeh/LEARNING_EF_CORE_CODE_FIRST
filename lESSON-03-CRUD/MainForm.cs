@@ -12,6 +12,8 @@ namespace lESSON_03_CRUD
 
 		private Settings.ConnectionStrings _connectionStrings = 
 						new Settings.ConnectionStrings();
+
+		Models.DatabaseContext databaseContext = null;
 		private void MainForm_Load(object sender, System.EventArgs e)
 		{
 			var configurationBuilder =
@@ -26,7 +28,7 @@ namespace lESSON_03_CRUD
 				.Bind(instance: _connectionStrings)
 				;
 
-			Models.DatabaseContext databaseContext =
+			 databaseContext =
 				new Models.DatabaseContext(connectionString: _connectionStrings.MyConnectionString);
 		}
 
@@ -35,62 +37,62 @@ namespace lESSON_03_CRUD
 		/// </summary>
 		private void RegisterButton_Click(object sender, System.EventArgs e)
 		{
-			Models.DatabaseContext databaseContext = null;
+			//Models.DatabaseContext databaseContext = null;
 
 			try
 			{
 				databaseContext =
 					new Models.DatabaseContext(connectionString:_connectionStrings.MyConnectionString);
 
-				// **************************************************
-				//Models.User newUser = new Models.User();
+                // **************************************************
+                //Models.User newUser = new Models.User();
 
-				//newUser.Age = 30,
-				//newUser.Username = "Ali";
-				//newUser.Password = "1234512345";
-				//newUser.EmailAddress = "AliAzimzadeh@GMail.com";
-				// **************************************************
+                //newUser.Age = 30,
+                //newUser.Username = "Ali";
+                //newUser.Password = "1234512345";
+                //newUser.EmailAddress = "AliAzimzadeh@GMail.com";
+                // **************************************************
 
-				// **************************************************
-				//Models.User newUser = new Models.User()
-				//{
-				//	Age = 30,
-				//	Username = "Ali",
-				//	Password = "1234512345",
-				//	EmailAddress = "Aliazimzadeh@GMail.com"
-				//};
-				// **************************************************
+                // **************************************************
+                //Models.User newUser = new Models.User()
+                //{
+                //	Age = 30,
+                //	Username = "Ali",
+                //	Password = "1234512345",
+                //	EmailAddress = "Aliazimzadeh@GMail.com"
+                //};
+                // **************************************************
 
-				// **************************************************
-				//Models.User newUser = new Models.User
-				//{
-				//	Age = 30,
-				//	Username = "Ali",
-				//	Password = "1234512345",
-				//	EmailAddress = "Aliazimzadeh@GMail.com"
-				//};
-				// **************************************************
+                // **************************************************
+                Models.User newUser = new Models.User
+                {
+                    Age = 30,
+                    Username = "Ali",
+                    Password = "1234512345",
+                    EmailAddress = "Aliazimzadeh@GMail.com"
+                };
+                // **************************************************
 
-				// **************************************************
-				Models.User newUser = new Models.User
-				{
-					Age = 30,
-					Username = "Ali",
-					Password = "1234512345",
-					EmailAddress = "Aliazimzadeh@GMail.com",
-				};
-				// **************************************************
+                // **************************************************
+                //Models.User newUser = new Models.User
+                //{
+                //	Age = 30,
+                //	Username = "Ali",
+                //	Password = "1234512345",
+                //	EmailAddress = "Aliazimzadeh@GMail.com",
+                //};
+                // **************************************************
 
-				// **************************************************
-				//Models.User newUser = new Models.User
-				//{
-				//	Username = usernameTextBox.Text,
-				//	Password = passwordTextBox.Text,
-				//	EmailAddress = emailAddressTextBox.Text,
-				//};
-				// **************************************************
+                // **************************************************
+                //Models.User newUser = new Models.User
+                //{
+                //	Username = usernameTextBox.Text,
+                //	Password = passwordTextBox.Text,
+                //	EmailAddress = emailAddressTextBox.Text,
+                //};
+                // **************************************************
 
-				databaseContext.Users.Add(newUser);
+                databaseContext.Users.Add(newUser);
 
 				databaseContext.SaveChanges();
 			}
@@ -426,7 +428,8 @@ namespace lESSON_03_CRUD
 
 				user.IsActive = !user.IsActive;
 
-				databaseContext.SaveChanges();
+				databaseContext
+					.SaveChanges();
 
 				System.Windows.Forms.MessageBox.Show("User updated successfully...");
 			}
@@ -461,7 +464,8 @@ namespace lESSON_03_CRUD
 				Models.User user =
 					databaseContext.Users
 					.Where(current => current.Username.ToLower() == username.ToLower())
-					.FirstOrDefault();
+					.FirstOrDefault()
+					;
 
 				if (user == null)
 				{
@@ -473,9 +477,14 @@ namespace lESSON_03_CRUD
 					return;
 				}
 
-				databaseContext.Users.Remove(user);
+				databaseContext
+					.Users
+					.Remove(user)
+					;
 
-				databaseContext.SaveChanges();
+				databaseContext
+					.SaveChanges()
+					;
 
 				System.Windows.Forms.MessageBox.Show("User deleted successfully...");
 			}

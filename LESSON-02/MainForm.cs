@@ -19,44 +19,88 @@ namespace LESSON_02
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-			Models.DatabaseContext databaseContext = null;
+			//Models.DatabaseContext databaseContext = null;
 
-			try
-			{
+			//try
+			//{
 
-				databaseContext =
-					new Models.DatabaseContext();
+			//	databaseContext =
+			//		new Models.DatabaseContext();
 
-			//	databaseContext.Database.EnsureCreated(); 
+			////	databaseContext.Database.EnsureCreated(); 
 				
-				Models.Person person =
-					new Models.Person
-					{
-						Id = 1,
-						Age = 47,
-						IsSupervisor = true,
-						FullName = "Mr. Ali Azimzadeh",
-					};
+			//	Models.Person person =
+			//		new Models.Person
+			//		{
+			//			Id = 1,
+			//			Age = 47,
+			//			IsSupervisor = true,
+			//			FullName = "Mr. Ali Azimzadeh",
+			//		};
 
-				databaseContext.People.Add(person);
+			//	databaseContext.People.Add(person);
 
-				databaseContext.SaveChanges();
+			//	databaseContext.SaveChanges();
 
-				int intNewId = person.Id;
-			}
-			catch (System.Exception ex)
-			{
-				System.Windows.Forms.MessageBox.Show(ex.Message);
-			}
-			finally
-			{
-				if (databaseContext != null)
-				{
-					databaseContext.Dispose();
-					//databaseContext = null;
-				}
-			}
+			//	int intNewId = person.Id;
+			//}
+			//catch (System.Exception ex)
+			//{
+			//	System.Windows.Forms.MessageBox.Show(ex.Message);
+			//}
+			//finally
+			//{
+			//	if (databaseContext != null)
+			//	{
+			//		databaseContext.Dispose();
+			//		//databaseContext = null;
+			//	}
+			//}
 		}
-	
+
+        private void HashButton_Click(object sender, EventArgs e)
+        {
+			//HashedPasswordTextBox.Text =
+			//	Security.Hash.GetSha1(passwordTextBox.Text);
+
+			HashedPasswordTextBox.Text =
+							Security.Hash.GetMD5(passwordTextBox.Text);
+
+			MessageBox.Show(HashedPasswordTextBox.Text.Length.ToString());
+
+        }
+
+        private void EncryptConnectionStringButton_Click(object sender, EventArgs e)
+        {
+			Security.ConnectionStringEncryption connectionStringEncryption =
+				new Security.ConnectionStringEncryption();
+
+			connectionStringEncryption
+				.Encryption(app_ConfigPathName: Application.ExecutablePath);
+        }
+
+        private void DecryptButton_Click(object sender, EventArgs e)
+        {
+			Security.ConnectionStringEncryption connectionStringEncryption =
+						new Security.ConnectionStringEncryption();
+
+			connectionStringEncryption
+				.Decryption(app_ConfigPathName: Application.ExecutablePath);
+		}
+
+        private void HashFileButton_Click(object sender, EventArgs e)
+        {
+			HashFileTextBox.Text =
+				Security.Hash.GetSha1ByPathName(filePathTextBox.Text);
+        }
+
+        private void browsButton_Click(object sender, EventArgs e)
+        {
+			if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+				filePathTextBox.Text =
+					openFileDialog.FileName;
+            }
+        }
     }
 }

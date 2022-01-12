@@ -42,6 +42,7 @@ namespace LESSON_01
             try
             {
                 databaseContext.Database.EnsureCreated();
+               // databaseContext.Database.Migrate();
 
                 var person = new Models.Person()
                 {
@@ -62,13 +63,13 @@ namespace LESSON_01
                     ;
 
                 //اطلاعات را از دیتابیس می خوانیم
-                var data = databaseContext
-                    .People
-                    .ToList()
-                    ;
+                //var data = databaseContext
+                //    .People
+                //    .ToList()
+                //    ;
 
-                dataGridViewPerson
-                    .DataSource = data;
+                //dataGridViewPerson
+                //    .DataSource = data;
             }
             catch (Exception ex)
             {

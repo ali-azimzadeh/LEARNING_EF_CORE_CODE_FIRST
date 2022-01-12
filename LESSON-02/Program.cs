@@ -20,8 +20,8 @@ namespace LESSON_02
 			// **************************************************
 
 			// **************************************************
-			//			MainForm startupForm = new MainForm();
-			Form1 startupForm = new Form1();
+						MainForm startupForm = new MainForm();
+			//Form1 startupForm = new Form1();
 
 			System.Windows.Forms.Application.Run(startupForm);
 

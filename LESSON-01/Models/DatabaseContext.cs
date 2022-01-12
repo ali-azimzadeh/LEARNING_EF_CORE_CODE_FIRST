@@ -21,6 +21,9 @@ namespace Models
         //    : base(options: options)
         //{
         //}
+        //public DatabaseContext():base()
+        //{
+        //}
 
         private readonly string _connectionString;
         public DatabaseContext(string connectionString)

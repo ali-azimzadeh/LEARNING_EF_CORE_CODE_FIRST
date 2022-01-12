@@ -19,6 +19,8 @@ namespace LESSON_02
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+
             //sqlconnection
             //sqlcommand
             //sqlparamter
@@ -74,8 +76,14 @@ namespace LESSON_02
 
             dataGridView1.DataSource = Roles.GetRoles();
 
-            dataGridView2.DataSource = Roles.GetRolesByRoleID(roleID: 9002);
-
+            if (Roles.GetRolesByRoleID(roleID: 9002).Count == 0)
+            {
+                MessageBox.Show("یافت نشد id رکوردی با این ");
+            }
+            else
+            {
+                dataGridView2.DataSource = Roles.GetRolesByRoleID(roleID: 9002);
+            }
             //bool insertResult =
             //   Roles.InsertRoles(roleID: 100, roleName: "کاربران 2", roleIsActive: true);
 
@@ -91,5 +99,6 @@ namespace LESSON_02
             bool deleteResult =
                 Roles.DeleteByIsActive(isActive:false);
         }
+
     }
 }
